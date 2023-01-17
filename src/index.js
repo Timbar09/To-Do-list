@@ -2,7 +2,7 @@ import './style.css';
 
 const tasks = [
   {
-    description: 'Develop a todo list app',
+    description: 'Develop the todo list structure',
     completed: false,
     index: 1,
   },
@@ -23,10 +23,10 @@ const render = () => {
 
   tasks.forEach((task) => {
     const todoTask = document.createElement('li');
-    todoTask.className = 'list__task';
+    todoTask.className = 'list__task padding-x flex  flex-ai-c';
     todoTask.innerHTML = `
             <input type="checkbox" id="${task.index}" />
-            <label for="${task.index}">${task.description}</label>`;
+            <label class="list__task-label" for="${task.index}">${task.description}</label>    <button class="list__task-move"><i class="fa-solid fa-ellipsis-vertical"></i></button>`;
 
     listContainer.appendChild(todoTask);
   });

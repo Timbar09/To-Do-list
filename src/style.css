@@ -1,3 +1,188 @@
+html {
+  box-sizing: border-box;
+  font-size: 100%;
+}
+
+*,
+*::before,
+*::after {
+  box-sizing: inherit;
+}
+
 body {
-  background-color: rgb(219, 211, 202);
+  --color-primary: rgb(255, 99, 71);
+  --color-highlight: rgb(49, 45, 44);
+  --color-text: rgb(70, 66, 65);
+  --color-midGrey: rgb(194, 191, 190);
+  --color-grey: rgb(231, 228, 227);
+  --color-light: rgb(251, 248, 247);
+  --color-white: rgb(255, 255, 255);
+
+  margin: 0;
+  padding: 0;
+  font-family: 'Ubuntu', sans-serif;
+  font-weight: 300;
+  color: var(--color-text);
+  background-color: var(--color-light);
+}
+
+button {
+  border: 0;
+  background-color: transparent;
+  cursor: pointer;
+  opacity: 0.5;
+  transition: opacity 150ms ease-in-out;
+}
+
+button:hover {
+  opacity: 1;
+}
+
+ul {
+  margin: 0;
+  padding: 0;
+  list-style: none;
+}
+
+.padding {
+  padding: 1rem;
+}
+
+.padding-x {
+  padding-left: 1rem;
+  padding-right: 1rem;
+}
+
+.padding-y {
+  padding-top: 1rem;
+  padding-bottom: 1rem;
+}
+
+.flex {
+  display: flex;
+}
+
+.flex-jc-sb {
+  justify-content: space-between;
+}
+
+.flex-ai-c {
+  align-items: center;
+}
+
+.title {
+  grid-area: title;
+  margin: 4rem 0;
+  font-size: 4rem;
+  font-weight: 700;
+  text-align: center;
+  opacity: 0.05;
+}
+
+.list {
+  grid-area: list;
+  margin: 0 auto;
+  min-width: 300px;
+  max-width: 550px;
+}
+
+.list__header {
+  gap: 0.5rem;
+  flex-wrap: wrap;
+  margin-bottom: 0.75rem;
+  border-radius: 0.5rem 0.5rem 0 0;
+  background-color: var(--color-primary);
+  box-shadow: 0.25rem 0.25rem 1rem rgba(0, 0, 0, 0.15);
+}
+
+.list__title {
+  margin: 0;
+  font-weight: 300;
+  color: var(--color-highlight);
+}
+
+.list__body {
+  margin-bottom: 2rem;
+  background-color: var(--color-white);
+  border-radius: 0 0 0.5rem 0.5rem;
+  overflow: hidden;
+  box-shadow: 0.25rem 0.25rem 1rem rgba(0, 0, 0, 0.15);
+}
+
+.list__add {
+  border-bottom: solid 2px var(--color-grey);
+}
+
+.list__add-input {
+  display: block;
+  font-family: inherit;
+  font-size: inherit;
+  font-style: italic;
+  width: 100%;
+  border: 0;
+  outline: 0;
+}
+
+.list__add-input:focus::placeholder {
+  opacity: 0.35;
+}
+
+.list__add-btn .fa-solid {
+  font-size: 0.65rem;
+  rotate: 90deg;
+}
+
+.list__task {
+  gap: 0.5rem;
+  line-height: 3;
+  border-bottom: solid 2px var(--color-grey);
+}
+
+[type='checkbox'] {
+  transition: scale 150ms ease-in-out;
+}
+
+.list__task-label {
+  position: relative;
+  display: block;
+}
+
+[type='checkbox']:checked {
+  accent-color: var(--color-white);
+  opacity: 0.4;
+}
+
+[type='checkbox']:checked + .list__task-label {
+  opacity: 0.4;
+}
+
+.list__task-label::before {
+  content: '';
+  position: absolute;
+  top: 50%;
+  left: 0;
+  width: 0;
+  height: 1px;
+  background-color: var(--color-text);
+  transition: width 200ms ease-in-out;
+}
+
+[type='checkbox']:checked + .list__task-label::before {
+  width: 100%;
+}
+
+.list__task-move {
+  margin-left: auto;
+  font-size: 1.25rem;
+  cursor: move;
+}
+
+.list__task:hover [type='checkbox'],
+[type='checkbox']:focus {
+  scale: 1.2;
+}
+
+.list__clear {
+  text-align: center;
+  background-color: var(--color-grey);
 }

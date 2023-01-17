@@ -7,48 +7,35 @@
     <link rel="preconnect" href="https://fonts.googleapis.com" />
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
     <link href="https://fonts.googleapis.com/css2?family=Ubuntu:wght@300;400;500;700&display=swap" rel="stylesheet" />
-    <title>To-do List | Miles Mosweu</title>
+    <title>Todo List | Miles Mosweu</title>
   </head>
   <body>
     <h1 class="title">Miles Mosweu's To-do List</h1>
 
     <div class="list">
-      <header class="list__header">
-        <h2 class="list__title">My To-do List</h2>
+      <header class="list__header padding flex flex-jc-sb flex-ai-c">
+        <h2 class="list__title">Today's Plan</h2>
         <button class="list__refresh-btn"><i class="fa-solid fa-rotate"></i></button>
       </header>
 
       <div class="list__body">
-        <form class="list__add" action="#">
+        <form class="list__add flex padding-x flex-jc-sb flex-ai-c" action="#">
           <input
             type="text"
-            class="list__add-input new task"
+            class="list__add-input padding-y new task"
             placeholder="Add your task..."
             aria-label="new litaskst name"
+            required
           />
 
-          <button class="list__add-btn task" aria-label="create new task">
+          <button class="list__add-btn task" aria-label="create new task" title="click this or press enter to submit">
             <i class="fa-solid fa-arrow-turn-down"></i>
           </button>
         </form>
 
-        <ul class="list__tasks">
-          <!-- <li class="list__task">
-            <input type="checkbox" id="task-1" />
-            <label for="task-1">Develop a todo list app</label>
-          </li>
+        <ul class="list__tasks"></ul>
 
-          <li class="list__task">
-            <input type="checkbox" id="task-2" />
-            <label for="task-2">Submit before end of day</label>
-          </li>
-
-          <li class="list__task">
-            <input type="checkbox" id="task-3" />
-            <label for="task-3">Get some rest</label>
-          </li> -->
-        </ul>
-        <div class="list__clear">
+        <div class="list__clear padding">
           <button class="list__clear-btn">Clear all completed</button>
         </div>
       </div>
