@@ -17,3 +17,19 @@ const tasks = [
     index: 3,
   },
 ];
+
+const render = () => {
+  const listContainer = document.querySelector('.list__tasks');
+
+  tasks.forEach((task) => {
+    const todoTask = document.createElement('li');
+    todoTask.className = 'list__task';
+    todoTask.innerHTML = `
+            <input type="checkbox" id="${task.index}" />
+            <label for="${task.index}">${task.description}</label>`;
+
+    listContainer.appendChild(todoTask);
+  });
+};
+
+window.addEventListener('load', render);
