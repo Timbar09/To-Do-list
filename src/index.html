@@ -3,14 +3,55 @@
   <head>
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>Wbpack Exercise</title>
+    <script src="https://kit.fontawesome.com/a1e854484d.js" crossorigin="anonymous"></script>
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link href="https://fonts.googleapis.com/css2?family=Ubuntu:wght@300;400;500;700&display=swap" rel="stylesheet" />
+    <title>To-do List | Miles Mosweu</title>
   </head>
   <body>
-    <h1>Hello webpack!</h1>
+    <h1 class="title">Miles Mosweu's To-do List</h1>
 
-    <p>
-      Lorem ipsum dolor sit amet, consectetur adipisicing elit. Reiciendis, voluptas obcaecati aliquid laborum explicabo
-      nostrum necessitatibus doloribus ad consequuntur amet.
-    </p>
+    <div class="list">
+      <header class="list__header">
+        <h2 class="list__title">My To-do List</h2>
+        <button class="list__refresh-btn"><i class="fa-solid fa-rotate"></i></button>
+      </header>
+
+      <div class="list__body">
+        <form class="list__add" action="#">
+          <input
+            type="text"
+            class="list__add-input new task"
+            placeholder="Add your task..."
+            aria-label="new litaskst name"
+          />
+
+          <button class="list__add-btn task" aria-label="create new task">
+            <i class="fa-solid fa-arrow-turn-down"></i>
+          </button>
+        </form>
+
+        <ul class="list__tasks">
+          <li class="list__task">
+            <input type="checkbox" id="task-1" />
+            <label for="task-1">Develop a todo list app</label>
+          </li>
+
+          <li class="list__task">
+            <input type="checkbox" id="task-2" />
+            <label for="task-2">Submit before end of day</label>
+          </li>
+
+          <li class="list__task">
+            <input type="checkbox" id="task-3" />
+            <label for="task-3">Get some rest</label>
+          </li>
+        </ul>
+        <div class="list__clear">
+          <button class="list__clear-btn">Clear all completed</button>
+        </div>
+      </div>
+    </div>
   </body>
 </html>
