@@ -148,7 +148,6 @@ ul {
 }
 
 [type='checkbox']:checked {
-  accent-color: var(--color-white);
   opacity: 0.4;
 }
 
@@ -177,8 +176,8 @@ ul {
   cursor: move;
 }
 
-.list__task:hover [type='checkbox'],
-[type='checkbox']:focus {
+[type='checkbox']:focus,
+.list__task:hover [type='checkbox'] {
   scale: 1.2;
 }
 
