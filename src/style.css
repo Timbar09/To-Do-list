@@ -170,6 +170,10 @@ ul {
   width: 100%;
 }
 
+.delete {
+  padding: 0;
+}
+
 .list__task-move {
   margin-left: auto;
   font-size: 1.25rem;

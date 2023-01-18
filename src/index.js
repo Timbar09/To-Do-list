@@ -1,10 +1,10 @@
 import './style.css';
-import Task from './modules/task.js';
-import { addTask, render, storeTask } from './modules/functions.js';
+import Task from './modules/taskClass.js';
+import { addTask, removeTask, render, storeTask, removeFromStorage } from './modules/functions.js';
 
 window.addEventListener('load', render);
 
-// Adding a task to tasksArr
+// Add a task to the list and storing to local storage
 const form = document.querySelector('.list__add');
 
 form.addEventListener('submit', (e) => {
@@ -15,4 +15,12 @@ form.addEventListener('submit', (e) => {
 
   addTask(newTask);
   storeTask(newTask);
+});
+
+// Remove a task from list and store it on local storage
+const taskContainer = document.querySelector('.list__tasks');
+
+taskContainer.addEventListener('click', (e) => {
+  removeTask(e.target);
+  removeFromStorage(e.target);
 });
