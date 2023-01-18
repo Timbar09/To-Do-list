@@ -1,36 +1,18 @@
 import './style.css';
-import UserInterface from './modules/UserInterface.js';
+import Task from './modules/task.js';
+import { addTask, render, storeTask } from './modules/functions.js';
 
-// const tasks = [
-//   {
-//     description: 'Develop the todo list structure',
-//     completed: false,
-//     index: 1,
-//   },
-//   {
-//     description: 'Submit before end of day',
-//     completed: false,
-//     index: 2,
-//   },
-//   {
-//     description: 'Get some rest',
-//     completed: false,
-//     index: 3,
-//   },
-// ];
+window.addEventListener('load', render);
 
-// const render = () => {
-//   const listContainer = document.querySelector('.list__tasks');
+// Adding a task to tasksArr
+const form = document.querySelector('.list__add');
 
-//   tasks.forEach((task) => {
-//     const todoTask = document.createElement('li');
-//     todoTask.className = 'list__task padding-x flex  flex-ai-c';
-//     todoTask.innerHTML = `
-//             <input type="checkbox" id="${task.index}" />
-//             <label class="list__task-label" for="${task.index}">${task.description}</label>    <button class="list__task-move"><i class="fa-solid fa-ellipsis-vertical"></i></button>`;
+form.addEventListener('submit', (e) => {
+  e.preventDefault();
+  const description = document.querySelector('.list__add-input').value;
 
-//     listContainer.appendChild(todoTask);
-//   });
-// };
+  const newTask = new Task(description);
 
-// window.addEventListener('load', render);
+  addTask(newTask);
+  storeTask(newTask);
+});
