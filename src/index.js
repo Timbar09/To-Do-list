@@ -1,6 +1,6 @@
 import './style.css';
 import Task from './modules/taskClass.js';
-import { addTask, removeTask, render, storeTask, removeFromStorage } from './modules/functions.js';
+import { addTask, removeTask, render, storeTask, removeFromStorage, clearForm } from './modules/functions.js';
 
 window.addEventListener('load', render);
 
@@ -15,6 +15,7 @@ form.addEventListener('submit', (e) => {
 
   addTask(newTask);
   storeTask(newTask);
+  clearForm();
 });
 
 // Remove a task from list and store it on local storage

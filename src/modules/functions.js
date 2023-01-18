@@ -13,6 +13,11 @@ export const getTasks = () => {
   return tasks;
 };
 
+// Clear input field
+export const clearForm = () => {
+  document.querySelector('.list__add-input').value = '';
+};
+
 // Add a task to the user interface list
 export const addTask = (task) => {
   const taskContainer = document.querySelector('.list__tasks');

@@ -1,9 +1,9 @@
-import { tasksArr } from './functions.js';
+import { getTasks } from './functions.js';
 
 export default class Task {
   constructor(description) {
     this.description = description;
     this.complete = false;
-    this.index = tasksArr.length;
+    this.index = getTasks().length;
   }
 }
