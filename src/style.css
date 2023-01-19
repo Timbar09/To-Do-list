@@ -11,10 +11,11 @@ html {
 
 body {
   --color-primary: rgb(255, 99, 71);
+  --color-primary-light: rgb(255, 226, 221);
   --color-highlight: rgb(49, 45, 44);
   --color-text: rgb(70, 66, 65);
-  --color-midGrey: rgb(194, 191, 190);
-  --color-grey: rgb(231, 228, 227);
+  --color-grey: rgba(0, 0, 0, 0.438);
+  --color-light-grey: rgb(231, 228, 227);
   --color-light: rgb(251, 248, 247);
   --color-white: rgb(255, 255, 255);
 
@@ -28,14 +29,14 @@ body {
 
 button {
   border: 0;
+  color: var(--color-grey);
   background-color: transparent;
   cursor: pointer;
-  opacity: 0.5;
-  transition: opacity 150ms ease-in-out;
+  transition: color 150ms ease-in-out;
 }
 
 button:hover {
-  opacity: 1;
+  color: var(--color-highlight);
 }
 
 ul {
@@ -110,7 +111,7 @@ ul {
 }
 
 .list__add {
-  border-bottom: solid 2px var(--color-grey);
+  border-bottom: solid 2px var(--color-light-grey);
 }
 
 .list__add-input {
@@ -135,31 +136,23 @@ ul {
 .list__task {
   gap: 0.5rem;
   line-height: 3.25;
-  border-bottom: solid 2px var(--color-grey);
+  border-bottom: solid 2px var(--color-light-grey);
+  transition: background-color 150ms ease-in-out;
 }
 
 .checkbox {
   transition: scale 150ms ease-in-out;
 }
 
-.list__task-edit {
-  margin: 0;
-  padding: 0;
-  border: 0;
-  outline: 0;
-  font-size: inherit;
-  line-height: inherit;
+.list__task-edit-wrap {
+  --width: auto;
+
+  position: relative;
+  width: var(--width);
+  overflow: hidden;
 }
 
-.checkbox:checked {
-  opacity: 0.4;
-}
-
-.checkbox:checked + .list__task-label {
-  opacity: 0.4;
-}
-
-.list__task-label::before {
+.list__task-edit-wrap::before {
   content: '';
   position: absolute;
   top: 50%;
@@ -170,18 +163,53 @@ ul {
   transition: width 200ms ease-in-out;
 }
 
-.checkbox:checked + .list__task-label::before {
+.checkbox:checked + .list__task-edit-wrap::before {
   width: 100%;
 }
 
-.delete {
+.list__task:has(.list__task-edit:focus) .list__task-edit-wrap::before {
+  width: 0;
+}
+
+.list__task-edit {
+  margin: 0;
   padding: 0;
+  border: 0;
+  outline: 0;
+  font-size: inherit;
+  line-height: inherit;
+  background-color: transparent;
+}
+
+.list__task:has(.list__task-edit:focus) {
+  background-color: var(--color-primary-light);
+}
+
+.checkbox:checked {
+  opacity: 0.4;
+}
+
+.checkbox:checked + .list__task-edit-wrap {
+  opacity: 0.4;
+}
+
+.delete {
+  opacity: 0;
+  padding: 0;
+  margin-left: auto;
+}
+
+.list__task:has(.list__task-edit:focus) .delete {
+  opacity: 1;
 }
 
 .list__task-move {
-  margin-left: auto;
   font-size: 1.25rem;
   cursor: move;
+}
+
+.list__task:has(.list__task-edit:focus) .list__task-move {
+  visibility: hidden;
 }
 
 .checkbox:focus,
@@ -191,5 +219,5 @@ ul {
 
 .list__clear {
   text-align: center;
-  background-color: var(--color-grey);
+  background-color: var(--color-light-grey);
 }

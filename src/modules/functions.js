@@ -29,10 +29,17 @@ export const addTask = (task) => {
   checkbox.id = task.index;
   checkbox.type = 'checkbox';
 
+  const taskEditWrap = document.createElement('div');
+  taskEditWrap.className = 'list__task-edit-wrap';
+  taskEditWrap.style.setProperty('--width', `${task.description.length}ch`);
+
   const taskEdit = document.createElement('input');
   taskEdit.className = 'list__task-edit';
   taskEdit.type = 'text';
+  taskEdit.size = task.description.length;
   taskEdit.value = task.description;
+
+  taskEditWrap.appendChild(taskEdit);
 
   const deleteBtn = document.createElement('button');
   deleteBtn.className = 'delete';
@@ -43,13 +50,11 @@ export const addTask = (task) => {
   moveBtn.innerHTML = `<i class="fa-solid fa-ellipsis-vertical"></i>`;
 
   todoTask.appendChild(checkbox);
-  todoTask.appendChild(taskEdit);
+  todoTask.appendChild(taskEditWrap);
   todoTask.appendChild(deleteBtn);
   todoTask.appendChild(moveBtn);
 
   taskContainer.appendChild(todoTask);
-
-  console.log(todoTask);
 };
 
 // Get the tasks from storage and display them on the user iterface
