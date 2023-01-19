@@ -23,11 +23,33 @@ export const addTask = (task) => {
   const taskContainer = document.querySelector('.list__tasks');
   const todoTask = document.createElement('li');
   todoTask.className = 'list__task padding-x flex  flex-ai-c';
-  todoTask.innerHTML = `
-            <input type="checkbox" id="${task.index}" />
-            <label class="list__task-label" for="${task.index}">${task.description}</label><button class="list__task-move"><button class="delete"><i class="fa-regular fa-trash-can"></i></button><i class="fa-solid fa-ellipsis-vertical"></i></button>`;
+
+  const checkbox = document.createElement('input');
+  checkbox.className = 'checkbox';
+  checkbox.id = task.index;
+  checkbox.type = 'checkbox';
+
+  const taskEdit = document.createElement('input');
+  taskEdit.className = 'list__task-edit';
+  taskEdit.type = 'text';
+  taskEdit.value = task.description;
+
+  const deleteBtn = document.createElement('button');
+  deleteBtn.className = 'delete';
+  deleteBtn.innerHTML = `<i class="fa-regular fa-trash-can"></i>`;
+
+  const moveBtn = document.createElement('button');
+  moveBtn.className = 'list__task-move';
+  moveBtn.innerHTML = `<i class="fa-solid fa-ellipsis-vertical"></i>`;
+
+  todoTask.appendChild(checkbox);
+  todoTask.appendChild(taskEdit);
+  todoTask.appendChild(deleteBtn);
+  todoTask.appendChild(moveBtn);
 
   taskContainer.appendChild(todoTask);
+
+  console.log(todoTask);
 };
 
 // Get the tasks from storage and display them on the user iterface
@@ -55,10 +77,12 @@ export const storeTask = (task) => {
 
 // Add a task to local storage
 export const removeFromStorage = (el) => {
-  const tasks = getTasks();
-  const taskId = el.parentElement.parentElement.firstElementChild.id;
-  const targetIndex = tasks.findIndex((task) => task.index == taskId);
-  tasks.splice(targetIndex, 1);
+  if (el.parentElement.classList.contains('delete')) {
+    const tasks = getTasks();
+    const taskId = el.parentElement.parentElement.firstElementChild.id;
+    const targetIndex = tasks.findIndex((task) => task.index == taskId);
+    tasks.splice(targetIndex, 1);
 
-  localStorage.setItem('tasks', JSON.stringify(tasks));
+    localStorage.setItem('tasks', JSON.stringify(tasks));
+  }
 };

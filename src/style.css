@@ -134,24 +134,28 @@ ul {
 
 .list__task {
   gap: 0.5rem;
-  line-height: 3;
+  line-height: 3.25;
   border-bottom: solid 2px var(--color-grey);
 }
 
-[type='checkbox'] {
+.checkbox {
   transition: scale 150ms ease-in-out;
 }
 
-.list__task-label {
-  position: relative;
-  display: block;
+.list__task-edit {
+  margin: 0;
+  padding: 0;
+  border: 0;
+  outline: 0;
+  font-size: inherit;
+  line-height: inherit;
 }
 
-[type='checkbox']:checked {
+.checkbox:checked {
   opacity: 0.4;
 }
 
-[type='checkbox']:checked + .list__task-label {
+.checkbox:checked + .list__task-label {
   opacity: 0.4;
 }
 
@@ -166,7 +170,7 @@ ul {
   transition: width 200ms ease-in-out;
 }
 
-[type='checkbox']:checked + .list__task-label::before {
+.checkbox:checked + .list__task-label::before {
   width: 100%;
 }
 
@@ -180,8 +184,8 @@ ul {
   cursor: move;
 }
 
-[type='checkbox']:focus,
-.list__task:hover [type='checkbox'] {
+.checkbox:focus,
+.list__task:hover .checkbox {
   scale: 1.2;
 }
 
