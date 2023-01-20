@@ -30,7 +30,7 @@ export const render = (tasks) => {
 
   tasks.forEach((task) => {
     const todoTask = document.createElement('li');
-    todoTask.className = `list__task padding-x flex  flex-ai-c ${task.checkded}`;
+    todoTask.className = `list__task padding-x flex  flex-ai-c ${task.checked}`;
     todoTask.id = task.index;
 
     const checkbox = document.createElement('span');
@@ -43,8 +43,8 @@ export const render = (tasks) => {
     const taskEdit = document.createElement('input');
     taskEdit.className = 'list__task-edit';
     taskEdit.type = 'text';
-    taskEdit.size = task.description.length;
     taskEdit.value = task.description;
+    taskEdit.maxLength = 40;
 
     taskEditWrap.appendChild(taskEdit);
 
@@ -89,12 +89,10 @@ export const checkOutTask = (target, tasks) => {
 
     tasks[taskIndex].complete = !tasks[taskIndex].complete;
 
-    console.log(tasks[taskIndex].checkded);
-
     if (tasks[taskIndex].complete) {
-      tasks[taskIndex].checkded = 'checked';
+      tasks[taskIndex].checked = 'checked';
     } else {
-      tasks[taskIndex].checkded = '';
+      tasks[taskIndex].checked = '';
     }
 
     storeTask(tasks);

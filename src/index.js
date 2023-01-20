@@ -32,7 +32,7 @@ taskContainer.addEventListener('click', (e) => {
   checkOutTask(e.target, tasksArr);
 });
 
-taskContainer.addEventListener('input', (e) => {
+taskContainer.addEventListener('change', (e) => {
   editTask(e.target, tasksArr);
 });
 

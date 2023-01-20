@@ -137,6 +137,7 @@ ul {
   gap: 0.5rem;
   line-height: 3.25;
   border-bottom: solid 2px var(--color-light-grey);
+  cursor: pointer;
   transition: background-color 150ms ease-in-out;
 }
 
@@ -196,7 +197,6 @@ ul {
 
   position: relative;
   width: var(--width);
-  overflow: hidden;
 }
 
 .checked .list__task-edit-wrap {
@@ -209,9 +209,10 @@ ul {
   top: 50%;
   left: 0;
   width: 0;
+  max-width: 19rem;
   height: 1px;
   background-color: var(--color-text);
-  transition: width 200ms ease-in-out;
+  transition: width 300ms ease-in-out;
 }
 
 .checked .list__task-edit-wrap::before {
@@ -227,9 +228,14 @@ ul {
   padding: 0;
   border: 0;
   outline: 0;
+  width: 100%;
   font-size: inherit;
   line-height: inherit;
   background-color: transparent;
+}
+
+.list__task-edit:disabled {
+  color: var(--color-text);
 }
 
 .list__task:has(.list__task-edit:focus) {
