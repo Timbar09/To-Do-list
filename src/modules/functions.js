@@ -75,7 +75,7 @@ export const removeTask = (target, tasks) => {
     tasks.splice(taskIndex, 1);
 
     tasks.forEach((task, i) => {
-      task.index = i;
+      task.index = i + 1;
     });
 
     storeTask(tasks);
