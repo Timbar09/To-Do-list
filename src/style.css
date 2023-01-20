@@ -179,17 +179,17 @@ ul {
   border: solid 0.1rem transparent;
 }
 
+.checked .checkbox::before,
+.checked .checkbox::after {
+  display: block;
+}
+
 .list__task:hover .checkbox {
   border: solid 0.1rem var(--color-primary);
 }
 
 .checked:hover .checkbox {
   border: solid 0.1rem transparent;
-}
-
-.checked .checkbox::before,
-.checked .checkbox::after {
-  display: block;
 }
 
 .list__task-edit-wrap {
@@ -240,10 +240,6 @@ ul {
 
 .list__task:has(.list__task-edit:focus) {
   background-color: var(--color-primary-light);
-}
-
-.checkbox:checked {
-  opacity: 0.4;
 }
 
 .delete {
