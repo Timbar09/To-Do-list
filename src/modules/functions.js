@@ -30,12 +30,11 @@ export const render = (tasks) => {
 
   tasks.forEach((task) => {
     const todoTask = document.createElement('li');
-    todoTask.className = 'list__task padding-x flex  flex-ai-c';
+    todoTask.className = `list__task padding-x flex  flex-ai-c ${task.checkded}`;
     todoTask.id = task.index;
 
-    const checkbox = document.createElement('input');
+    const checkbox = document.createElement('span');
     checkbox.className = 'checkbox';
-    checkbox.type = 'checkbox';
 
     const taskEditWrap = document.createElement('div');
     taskEditWrap.className = 'list__task-edit-wrap';
@@ -82,13 +81,32 @@ export const removeTask = (target, tasks) => {
   }
 };
 
-export const checkTask = (target, tasks) => {
-  if (target.classList.contains('checkbox')) {
-    const targetInput = target.nextElementSibling.firstChild;
+export const checkOutTask = (target, tasks) => {
+  if (target.classList.contains('list__task')) {
+    const targetInput = target.firstChild.nextElementSibling.firstChild;
 
     const taskIndex = tasks.findIndex((task) => task.description === targetInput.value);
 
     tasks[taskIndex].complete = !tasks[taskIndex].complete;
+
+    console.log(tasks[taskIndex].checkded);
+
+    if (tasks[taskIndex].complete) {
+      tasks[taskIndex].checkded = 'checked';
+    } else {
+      tasks[taskIndex].checkded = '';
+    }
+
+    storeTask(tasks);
+    render(tasks);
+  }
+};
+
+export const editTask = (target, tasks) => {
+  if (target.classList.contains('list__task-edit')) {
+    const taskIndex = tasks.findIndex((task) => task.index == target.closest('.list__task').id);
+
+    tasks[taskIndex].description = target.value;
 
     storeTask(tasks);
     render(tasks);

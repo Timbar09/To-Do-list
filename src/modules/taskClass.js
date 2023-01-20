@@ -3,5 +3,6 @@ export default class Task {
     this.description = description;
     this.complete = false;
     this.index = arr.length;
+    this.checked = '';
   }
 }
