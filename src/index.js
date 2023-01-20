@@ -1,5 +1,5 @@
 import './style.css';
-import Task from './modules/taskClass';
+import Task from './modules/taskClass.js';
 import {
   addTask,
   render,

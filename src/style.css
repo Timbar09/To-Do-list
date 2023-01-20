@@ -150,14 +150,6 @@ ul {
   transition: border 150ms ease-in-out;
 }
 
-.list__task:hover .checkbox {
-  border: solid 0.1rem var(--color-primary);
-}
-
-.checked:hover .checkbox {
-  border: solid 0.1rem transparent;
-}
-
 .checkbox::before,
 .checkbox::after {
   content: '';
@@ -184,6 +176,14 @@ ul {
 }
 
 .checked .checkbox {
+  border: solid 0.1rem transparent;
+}
+
+.list__task:hover .checkbox {
+  border: solid 0.1rem var(--color-primary);
+}
+
+.checked:hover .checkbox {
   border: solid 0.1rem transparent;
 }
 

@@ -50,11 +50,11 @@ export const render = (tasks) => {
 
     const deleteBtn = document.createElement('button');
     deleteBtn.className = 'delete';
-    deleteBtn.innerHTML = `<i class="fa-regular fa-trash-can"></i>`;
+    deleteBtn.innerHTML = '<i class="fa-regular fa-trash-can"></i>';
 
     const moveBtn = document.createElement('button');
     moveBtn.className = 'list__task-move';
-    moveBtn.innerHTML = `<i class="fa-solid fa-ellipsis-vertical"></i>`;
+    moveBtn.innerHTML = '<i class="fa-solid fa-ellipsis-vertical"></i>';
 
     todoTask.appendChild(checkbox);
     todoTask.appendChild(taskEditWrap);
@@ -74,7 +74,9 @@ export const removeTask = (target, tasks) => {
 
     tasks.splice(taskIndex, 1);
 
-    tasks.forEach((task, i) => (task.index = i));
+    tasks.forEach((task, i) => {
+      task.index = i;
+    });
 
     storeTask(tasks);
     render(tasks);
@@ -102,7 +104,7 @@ export const checkOutTask = (target, tasks) => {
 
 export const editTask = (target, tasks) => {
   if (target.classList.contains('list__task-edit')) {
-    const taskIndex = tasks.findIndex((task) => task.index == target.closest('.list__task').id);
+    const taskIndex = tasks.findIndex((task) => task.index.toString() === target.closest('.list__task').id);
 
     tasks[taskIndex].description = target.value;
 
