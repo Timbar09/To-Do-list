@@ -121,7 +121,17 @@ You can deploy this project by:
 - Twitter: [@Milez09](https://twitter.com/Milez09)
 - LinkedIn: [@miles-mosweu09](https://www.linkedin.com/in/miles-mosweu09)
 
-<br />
+## 🔭 Future Features <a name="future-features"></a>
+
+- [ ] **Update a tasks' object's value for completed key upon user actions and store the update on local storage**
+
+- [ ] **Implement a function for the "Clear all completed" button which will clear out all the checked or marked tasks.**
+
+- [ ] **Deploy the app on GitHub Pages.**
+
+
+
+<p align="right">(<a href="#readme-top">back to top</a>)</p>
 
 ## 🤝 Contributing <a name="contributing"></a>
 
