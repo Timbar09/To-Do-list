@@ -1,17 +1,9 @@
 import './style.css';
 import Task from './modules/taskClass.js';
-import {
-  addTask,
-  render,
-  storeTask,
-  removeTask,
-  tasksArr,
-  taskContainer,
-  checkOutTask,
-  editTask,
-} from './modules/functions.js';
+import { checkOutTask, clearAllCompleted } from './modules/taskStatus.js';
+import { addTask, render, removeTask, tasksArr, taskContainer, editTask } from './modules/functions.js';
 
-// Add a task to the list and storing to local storage
+// Add a task
 const form = document.querySelector('.list__add');
 
 form.addEventListener('submit', (e) => {
@@ -22,18 +14,17 @@ form.addEventListener('submit', (e) => {
 
   description.value = '';
   addTask(tasksArr, newTask);
-  storeTask(tasksArr);
-  render(tasksArr);
 });
 
-// Remove a task from list and update local storage
+// Remove a task
 taskContainer.addEventListener('click', (e) => {
-  removeTask(e.target, tasksArr);
+  removeTask(tasksArr, e.target);
   checkOutTask(e.target, tasksArr);
 });
 
+// Edit a task
 taskContainer.addEventListener('change', (e) => {
-  editTask(e.target, tasksArr);
+  editTask(tasksArr, e.target);
 });
 
 render(tasksArr);

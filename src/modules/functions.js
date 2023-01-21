@@ -16,11 +16,7 @@ export const storeTask = (tasks) => {
   localStorage.setItem('tasks', JSON.stringify(tasks));
 };
 
-export const addTask = (tasks, task) => {
-  tasks.push(task);
-};
-
-export const tasksArr = getTasks();
+export let tasksArr = getTasks();
 export const taskContainer = document.querySelector('.list__tasks');
 
 export const render = (tasks) => {
@@ -65,9 +61,20 @@ export const render = (tasks) => {
   });
 };
 
+export const addTask = (tasks, task) => {
+  tasks = getTasks();
+
+  tasks.push(task);
+
+  storeTask(tasks);
+  render(tasks);
+};
+
 // Remove a task from the user interface list
-export const removeTask = (target, tasks) => {
+export const removeTask = (tasks, target) => {
   if (target.parentElement.classList.contains('delete')) {
+    tasks = getTasks();
+
     const targetInput = target.parentElement.previousElementSibling.firstChild;
 
     const taskIndex = tasks.findIndex((task) => task.description === targetInput.value);
@@ -83,27 +90,10 @@ export const removeTask = (target, tasks) => {
   }
 };
 
-export const checkOutTask = (target, tasks) => {
-  if (target.classList.contains('list__task')) {
-    const targetInput = target.firstChild.nextElementSibling.firstChild;
-
-    const taskIndex = tasks.findIndex((task) => task.description === targetInput.value);
-
-    tasks[taskIndex].complete = !tasks[taskIndex].complete;
-
-    if (tasks[taskIndex].complete) {
-      tasks[taskIndex].checked = 'checked';
-    } else {
-      tasks[taskIndex].checked = '';
-    }
-
-    storeTask(tasks);
-    render(tasks);
-  }
-};
-
-export const editTask = (target, tasks) => {
+export const editTask = (tasks, target) => {
   if (target.classList.contains('list__task-edit')) {
+    tasks = getTasks();
+
     const taskIndex = tasks.findIndex((task) => task.index.toString() === target.closest('.list__task').id);
 
     tasks[taskIndex].description = target.value;
