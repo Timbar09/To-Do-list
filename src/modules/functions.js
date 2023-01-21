@@ -21,8 +21,6 @@ export const taskContainer = document.querySelector('.list__tasks');
 export const render = (tasks) => {
   taskContainer.innerHTML = '';
 
-  tasks = getTasks();
-
   tasks.forEach((task) => {
     const todoTask = document.createElement('li');
     todoTask.className = `list__task padding-x flex  flex-ai-c ${task.checked}`;
@@ -61,8 +59,6 @@ export const render = (tasks) => {
 };
 
 export const addTask = (tasks, task) => {
-  tasks = getTasks();
-
   tasks.push(task);
 
   storeTask(tasks);
@@ -72,8 +68,6 @@ export const addTask = (tasks, task) => {
 // Remove a task from the user interface list
 export const removeTask = (tasks, target) => {
   if (target.parentElement.classList.contains('delete')) {
-    tasks = getTasks();
-
     const targetInput = target.parentElement.previousElementSibling.firstChild;
 
     const taskIndex = tasks.findIndex((task) => task.description === targetInput.value);
@@ -91,8 +85,6 @@ export const removeTask = (tasks, target) => {
 
 export const editTask = (tasks, target) => {
   if (target.classList.contains('list__task-edit')) {
-    tasks = getTasks();
-
     const taskIndex = tasks.findIndex((task) => task.index.toString() === target.closest('.list__task').id);
 
     tasks[taskIndex].description = target.value;
