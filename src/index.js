@@ -1,7 +1,7 @@
 import './style.css';
 import Task from './modules/taskClass.js';
 import { checkOutTask, clearAllCompleted } from './modules/taskStatus.js';
-import { 
+import {
   addTask,
   render,
   removeTask,
@@ -16,7 +16,7 @@ const form = document.querySelector('.list__add');
 form.addEventListener('submit', (e) => {
   e.preventDefault();
   const description = document.querySelector('.list__add-input');
-    const tasksArr = getTasks();
+  const tasksArr = getTasks();
 
   const newTask = new Task(tasksArr, description.value);
 

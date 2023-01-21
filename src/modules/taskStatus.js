@@ -1,4 +1,4 @@
-import {storeTask, render } from './functions.js';
+import { storeTask, render } from './functions.js';
 
 export const checkOutTask = (target, tasks) => {
   if (target.classList.contains('list__task') || target.classList.contains('checkbox')) {
@@ -26,7 +26,7 @@ export const checkOutTask = (target, tasks) => {
 };
 
 export const clearAllCompleted = (tasks) => {
-  tasks = tasks.filter((task) => { return !task.complete; });
+  tasks = tasks.filter(task => !task.complete);
 
   tasks.forEach((task, i) => {
     task.index = i + 1;
