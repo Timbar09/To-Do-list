@@ -16,7 +16,6 @@ export const storeTask = (tasks) => {
   localStorage.setItem('tasks', JSON.stringify(tasks));
 };
 
-export let tasksArr = getTasks();
 export const taskContainer = document.querySelector('.list__tasks');
 
 export const render = (tasks) => {

@@ -123,11 +123,7 @@ You can deploy this project by:
 
 ## 🔭 Future Features <a name="future-features"></a>
 
-- [ ] **Update a tasks' object's value for completed key upon user actions and store the update on local storage**
-
-- [ ] **Implement a function for the "Clear all completed" button which will clear out all the checked or marked tasks.**
-
-- [ ] **Deploy the app on GitHub Pages.**
+- [ ] **Implement a refresh function that removes very old tasks and only recent ones**
 
 
 

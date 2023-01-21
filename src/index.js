@@ -1,7 +1,16 @@
 import './style.css';
 import Task from './modules/taskClass.js';
 import { checkOutTask, clearAllCompleted } from './modules/taskStatus.js';
-import { addTask, render, removeTask, tasksArr, taskContainer, editTask } from './modules/functions.js';
+import { 
+  addTask, 
+  render, 
+  removeTask, 
+  taskContainer, 
+  editTask, 
+  getTasks 
+} from './modules/functions.js';
+
+let tasksArr = getTasks();
 
 // Add a task
 const form = document.querySelector('.list__add');

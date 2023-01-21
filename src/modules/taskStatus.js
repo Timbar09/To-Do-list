@@ -30,11 +30,7 @@ export const checkOutTask = (target, tasks) => {
 export const clearAllCompleted = (tasks) => {
   tasks = getTasks();
 
-  tasks = tasks.filter((task) => {
-    return !task.complete;
-  });
-
-  console.log(tasks);
+  tasks = tasks.filter((task) => {return !task.complete;});
 
   tasks.forEach((task, i) => {
     task.index = i + 1;
