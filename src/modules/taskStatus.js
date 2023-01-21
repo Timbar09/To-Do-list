@@ -26,3 +26,20 @@ export const checkOutTask = (target, tasks) => {
     render(tasks);
   }
 };
+
+export const clearAllCompleted = (tasks) => {
+  tasks = getTasks();
+
+  tasks = tasks.filter((task) => {
+    return !task.complete;
+  });
+
+  console.log(tasks);
+
+  tasks.forEach((task, i) => {
+    task.index = i + 1;
+  });
+
+  storeTask(tasks);
+  render(tasks);
+};

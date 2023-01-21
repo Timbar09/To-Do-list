@@ -27,4 +27,11 @@ taskContainer.addEventListener('change', (e) => {
   editTask(tasksArr, e.target);
 });
 
+// Clear all completed tasks
+const clearAllBtn = document.querySelector('.list__clear-btn');
+
+clearAllBtn.addEventListener('click', () => {
+  clearAllCompleted(tasksArr);
+});
+
 render(tasksArr);

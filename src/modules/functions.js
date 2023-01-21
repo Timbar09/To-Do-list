@@ -49,7 +49,7 @@ export const render = (tasks) => {
     deleteBtn.innerHTML = '<i class="fa-regular fa-trash-can"></i>';
 
     const moveBtn = document.createElement('button');
-    moveBtn.className = 'list__task-move';
+    moveBtn.className = 'list__task-move btn';
     moveBtn.innerHTML = '<i class="fa-solid fa-ellipsis-vertical"></i>';
 
     todoTask.appendChild(checkbox);
