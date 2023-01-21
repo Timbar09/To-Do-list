@@ -57,7 +57,7 @@
 
 ## 🚀 Live Demo <a name="live-demo"></a>
 
-- [Live demo comming soon](#)
+- Visit the live demo [here](https://timbar09.github.io/To-Do-list/dist/)
 
 <p align="right">(<a href="#readme-top">back to top</a>)</p>
 
