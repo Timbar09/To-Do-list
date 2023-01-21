@@ -1,3 +1,5 @@
+/* eslint-disable arrow-body-style*/
+
 import { storeTask, render } from './functions.js';
 
 export const checkOutTask = (target, tasks) => {
@@ -27,7 +29,7 @@ export const checkOutTask = (target, tasks) => {
 
 export const clearAllCompleted = (tasks) => {
   tasks = tasks.filter((task) => {
-    return !task.complete
+    return !task.complete;
   });
 
   tasks.forEach((task, i) => {
