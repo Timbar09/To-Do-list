@@ -32,10 +32,13 @@ button {
   color: var(--color-grey);
   background-color: transparent;
   cursor: pointer;
+}
+
+.btn {
   transition: color 150ms ease-in-out;
 }
 
-button:hover {
+.btn:hover {
   color: var(--color-highlight);
 }
 
@@ -138,7 +141,7 @@ ul {
   line-height: 3.25;
   border-bottom: solid 2px var(--color-light-grey);
   cursor: pointer;
-  transition: background-color 150ms ease-in-out;
+  transition: background-color 100ms ease-in-out;
 }
 
 .checkbox {
@@ -243,25 +246,35 @@ ul {
 }
 
 .delete {
-  opacity: 0;
   padding: 0;
   margin-left: auto;
+  display: none;
 }
 
-.list__task:has(.list__task-edit:focus) .delete {
-  opacity: 1;
+.list__task:focus-within .delete {
+  display: inline-block;
 }
 
 .list__task-move {
+  margin-left: auto;
   font-size: 1.25rem;
   cursor: move;
 }
 
-.list__task:has(.list__task-edit:focus) .list__task-move {
-  visibility: hidden;
+.list__task:focus-within .list__task-move {
+  display: none;
 }
 
 .list__clear {
   text-align: center;
   background-color: var(--color-light-grey);
+}
+
+.list__clear-btn {
+  transition: color 150ms ease-in-out;
+}
+
+.list__clear-btn:hover {
+  color: var(--color-highlight);
+  text-decoration: underline;
 }

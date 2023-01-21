@@ -16,17 +16,10 @@ export const storeTask = (tasks) => {
   localStorage.setItem('tasks', JSON.stringify(tasks));
 };
 
-export const addTask = (tasks, task) => {
-  tasks.push(task);
-};
-
-export const tasksArr = getTasks();
 export const taskContainer = document.querySelector('.list__tasks');
 
 export const render = (tasks) => {
   taskContainer.innerHTML = '';
-
-  tasks = getTasks();
 
   tasks.forEach((task) => {
     const todoTask = document.createElement('li');
@@ -53,7 +46,7 @@ export const render = (tasks) => {
     deleteBtn.innerHTML = '<i class="fa-regular fa-trash-can"></i>';
 
     const moveBtn = document.createElement('button');
-    moveBtn.className = 'list__task-move';
+    moveBtn.className = 'list__task-move btn';
     moveBtn.innerHTML = '<i class="fa-solid fa-ellipsis-vertical"></i>';
 
     todoTask.appendChild(checkbox);
@@ -65,8 +58,15 @@ export const render = (tasks) => {
   });
 };
 
+export const addTask = (tasks, task) => {
+  tasks.push(task);
+
+  storeTask(tasks);
+  render(tasks);
+};
+
 // Remove a task from the user interface list
-export const removeTask = (target, tasks) => {
+export const removeTask = (tasks, target) => {
   if (target.parentElement.classList.contains('delete')) {
     const targetInput = target.parentElement.previousElementSibling.firstChild;
 
@@ -83,26 +83,7 @@ export const removeTask = (target, tasks) => {
   }
 };
 
-export const checkOutTask = (target, tasks) => {
-  if (target.classList.contains('list__task')) {
-    const targetInput = target.firstChild.nextElementSibling.firstChild;
-
-    const taskIndex = tasks.findIndex((task) => task.description === targetInput.value);
-
-    tasks[taskIndex].complete = !tasks[taskIndex].complete;
-
-    if (tasks[taskIndex].complete) {
-      tasks[taskIndex].checked = 'checked';
-    } else {
-      tasks[taskIndex].checked = '';
-    }
-
-    storeTask(tasks);
-    render(tasks);
-  }
-};
-
-export const editTask = (target, tasks) => {
+export const editTask = (tasks, target) => {
   if (target.classList.contains('list__task-edit')) {
     const taskIndex = tasks.findIndex((task) => task.index.toString() === target.closest('.list__task').id);
 
