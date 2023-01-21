@@ -1,4 +1,4 @@
-/* eslint-disable arrow-body-style*/
+/* eslint-disable arrow-body-style */
 
 import { storeTask, render } from './functions.js';
 
