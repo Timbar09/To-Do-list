@@ -119,7 +119,7 @@ You can deploy this project by:
 
 - GitHub: [@Timbar09](https://github.com/Timbar09)
 - Twitter: [@Milez09](https://twitter.com/Milez09)
-- LinkedIn: [@miles-mosweu09](https://www.linkedin.com/in/miles-mosweu09)
+- LinkedIn: [@miles09](https://www.linkedin.com/in/miles09)
 
 ## 🔭 Future Features <a name="future-features"></a>
 
@@ -133,7 +133,7 @@ You can deploy this project by:
 
 Contributions, issues, and feature requests are welcome!
 
-Feel free to check the [issues page](https://github.com/Timbar09/Africas-Leading-Tech-Conference/issues).
+Feel free to check the [issues page](https://github.com/Timbar09/To-Do-list/issues).
 
 <p align="right">(<a href="#readme-top">back to top</a>)</p>
 
