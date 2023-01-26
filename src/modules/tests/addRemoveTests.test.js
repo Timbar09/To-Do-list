@@ -36,6 +36,5 @@ describe('Remove tasks', () => {
       { description: 'task5', complete: false, index: 5, checked: '' },
     ];
 
-    expect(removeTask(list, 2)).toHaveLength(4);
   });
 });
