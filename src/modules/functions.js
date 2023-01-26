@@ -1,3 +1,5 @@
+// export const taskContainer = document.querySelector('.list__tasks');
+
 // Get the tasks from local storage
 export const getTasks = () => {
   let tasks;
@@ -16,10 +18,8 @@ export const storeTask = (tasks) => {
   localStorage.setItem('tasks', JSON.stringify(tasks));
 };
 
-export const taskContainer = document.querySelector('.list__tasks');
-
-export const render = (tasks) => {
-  taskContainer.innerHTML = '';
+export const render = (tasks, container) => {
+  container.innerHTML = '';
 
   tasks.forEach((task) => {
     const todoTask = document.createElement('li');
@@ -54,19 +54,19 @@ export const render = (tasks) => {
     todoTask.appendChild(deleteBtn);
     todoTask.appendChild(moveBtn);
 
-    taskContainer.appendChild(todoTask);
+    container.appendChild(todoTask);
   });
 };
 
-export const addTask = (tasks, task) => {
+export const addTask = (tasks, task, container) => {
   tasks.push(task);
 
   storeTask(tasks);
-  render(tasks);
+  render(tasks, container);
 };
 
 // Remove a task from the user interface list
-export const removeTask = (tasks, target) => {
+export const removeTask = (tasks, target, container) => {
   if (target.parentElement.classList.contains('delete')) {
     const targetInput = target.parentElement.previousElementSibling.firstChild;
 
@@ -79,17 +79,17 @@ export const removeTask = (tasks, target) => {
     });
 
     storeTask(tasks);
-    render(tasks);
+    render(tasks, container);
   }
 };
 
-export const editTask = (tasks, target) => {
+export const editTask = (tasks, target, container) => {
   if (target.classList.contains('list__task-edit')) {
     const taskIndex = tasks.findIndex((task) => task.index.toString() === target.closest('.list__task').id);
 
     tasks[taskIndex].description = target.value;
 
     storeTask(tasks);
-    render(tasks);
+    render(tasks, container);
   }
 };
