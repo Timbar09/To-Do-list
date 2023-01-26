@@ -28,13 +28,12 @@ taskContainer.addEventListener('click', (e) => {
 
     const taskIndex = tasksArr.findIndex((task) => task.description === targetInput.value);
     removeTask(tasksArr, taskIndex);
-   
+
+    storeTask(tasksArr);
+    render(tasksArr);
   }
 
   checkOutTask(e.target, tasksArr);
-
-  storeTask(tasksArr);
-  render(tasksArr);
 });
 
 // Edit a task
