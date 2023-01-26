@@ -2,12 +2,12 @@
  * @jest-environment jsdom
  */
 
-import { addTask, storeTask, getTasks } from '../functions.js';
+import { addTask, storeTask, getTasks, removeTask } from '../functions.js';
 import Task from '../taskClass.js';
 
 // AddTask tests
-describe('Add tasks', () => {
-  test('is task added to DOM', () => {
+describe('Remove tasks', () => {
+  test('is task removed from the DOM', () => {
     const newTask = new Task('task');
     const list = [];
 

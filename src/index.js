@@ -23,8 +23,14 @@ form.addEventListener('submit', (e) => {
 // Remove a task
 taskContainer.addEventListener('click', (e) => {
   const tasksArr = getTasks();
+  if (e.target.parentElement.classList.contains('delete')) {
+    const targetInput = e.target.parentElement.previousElementSibling.firstChild;
 
-  removeTask(tasksArr, e.target);
+    const taskIndex = tasksArr.findIndex((task) => task.description === targetInput.value);
+    removeTask(tasksArr, taskIndex);
+   
+  }
+
   checkOutTask(e.target, tasksArr);
 
   storeTask(tasksArr);

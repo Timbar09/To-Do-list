@@ -65,18 +65,12 @@ export const addTask = (tasks, task) => {
 };
 
 // Remove a task from the user interface list
-export const removeTask = (tasks, target) => {
-  if (target.parentElement.classList.contains('delete')) {
-    const targetInput = target.parentElement.previousElementSibling.firstChild;
-
-    const taskIndex = tasks.findIndex((task) => task.description === targetInput.value);
-
-    tasks.splice(taskIndex, 1);
+export const removeTask = (tasks, taskIndex) => {
+  tasks.splice(taskIndex, 1);
 
     tasks.forEach((task, i) => {
       task.index = i + 1;
     });
-  }
 };
 
 export const editTask = (tasks, target) => {
