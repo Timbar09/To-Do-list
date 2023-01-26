@@ -2,15 +2,25 @@
  * @jest-environment jsdom
  */
 
-import { taskContainer, addTask } from '../functions.js';
+import { addTask, storeTask, getTasks, removeTask } from '../functions.js';
 import Task from '../taskClass.js';
 
-test('does the listContainer have 1 list item', () => {
-  document.body.innerHTML = '<div>' + '  <ul id="list"><li></li></ul>' + '</div>';
+// AddTask tests
+describe('Add tasks', () => {
+  test('is task added to DOM', () => {
+    const newTask = new Task('task');
+    const list = [];
 
-  const tasks = [];
-  const newTask = new Task('task');
-  const taskList = document.querySelectorAll('#list li');
+    expect(addTask(list, newTask)).toHaveLength(1);
+  });
 
-  expect(addTask(tasks, newTask)).toHaveLength(1);
+  test('is local storage updated', () => {
+    const newTask = new Task('storageTask');
+    const list = [];
+    addTask(list, newTask);
+
+    storeTask(list);
+
+    expect(getTasks()).toHaveLength(1);
+  });
 });

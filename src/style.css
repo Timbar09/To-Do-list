@@ -248,7 +248,6 @@ ul {
 .delete {
   padding: 0;
   margin-left: auto;
-  display: none;
 }
 
 .list__task:focus-within .delete {
@@ -259,6 +258,7 @@ ul {
   margin-left: auto;
   font-size: 1.25rem;
   cursor: move;
+  display: none;
 }
 
 .list__task:focus-within .list__task-move {

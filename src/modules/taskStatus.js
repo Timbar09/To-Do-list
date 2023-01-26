@@ -1,6 +1,6 @@
 import { storeTask, render } from './functions.js';
 
-export const checkOutTask = (target, tasks, container) => {
+export const checkOutTask = (target, tasks) => {
   if (target.classList.contains('list__task') || target.classList.contains('checkbox')) {
     let targetInput;
 
@@ -21,7 +21,7 @@ export const checkOutTask = (target, tasks, container) => {
     }
 
     storeTask(tasks);
-    render(tasks, container);
+    render(tasks);
   }
 };
 
@@ -33,5 +33,5 @@ export const clearAllCompleted = (tasks, container) => {
   });
 
   storeTask(tasks);
-  render(tasks, container);
+  render(tasks);
 };
