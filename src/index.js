@@ -41,8 +41,12 @@ taskContainer.addEventListener('click', (e) => {
 // Edit a task
 taskContainer.addEventListener('change', (e) => {
   const tasksArr = getTasks();
-
-  editTask(tasksArr, e.target, taskContainer);
+  if (e.target.classList.contains('list__task-edit')) {
+    editTask(tasksArr, e.target);
+    storeTask(tasksArr);
+    render(tasksArr);
+  }
+  
 });
 
 // Clear all completed tasks
