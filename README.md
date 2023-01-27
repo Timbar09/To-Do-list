@@ -16,7 +16,9 @@
 - [💻 Getting Started](#getting-started)
   - [Setup](#setup)
   - [Prerequisites](#prerequisites)
+  - [Install](#install)
   - [Usage](#usage)
+  - [Run tests](#run-tests)
   - [Deployment](#triangular_flag_on_post-deployment)
 - [👥 Authors](#authors)
 - [🤝 Contributing](#contributing)
@@ -72,7 +74,8 @@ In order to run this project you need:
 - A browser (e.g. Firefox)
 - An IDE (e.g. [Vususal Studio Code](https://code.visualstudio.com/download))
 - [npm](https://nodejs.org/en/)
-- Terminal
+- [Webpack](https://webpack.js.org/)
+- [Jest](https://jestjs.io/)
 
 ### Setup
 
@@ -96,11 +99,29 @@ To clone this repository to your desired folder, follow the steps below:
   - Select the "Open with GitHub Desktop" option
   - After the GitHub Desktop add opens, click the "clone repo" button
 
+### Install
+
+Install this project's dependencies with the following command:
+
+```sh
+  npm install
+```
+
 ### Usage
 
 To run the project, execute the following command:
 
-**Click the "Go Live" button on your IDE(VS Code in this case)**
+```sh
+  npm start
+```
+
+### Run tests
+
+To run tests, run the following command:
+
+```sh
+  npm test
+```
 
 ### Deployment
 
