@@ -1,7 +1,9 @@
 import './style.css';
 import Task from './modules/taskClass.js';
 import { checkOutTask, clearAllCompleted } from './modules/taskStatus.js';
-import { addTask, render, storeTask, removeTask, editTask, getTasks, taskContainer } from './modules/functions.js';
+import {
+  addTask, render, storeTask, removeTask, editTask, getTasks, taskContainer,
+} from './modules/functions.js';
 
 const form = document.querySelector('.list__add');
 const clearAllBtn = document.querySelector('.list__clear-btn');

@@ -25,7 +25,7 @@ export const checkOutTask = (target, tasks) => {
   }
 };
 
-export const clearAllCompleted = (tasks, container) => {
+export const clearAllCompleted = (tasks) => {
   tasks = tasks.filter((task) => !task.complete);
 
   tasks.forEach((task, i) => {
