@@ -3,7 +3,6 @@
 .pln {
   color: #000;
 }
-
 @media screen {
   .str {
     color: #080;
@@ -42,7 +41,6 @@
     color: red;
   }
 }
-
 @media print, projection {
   .str {
     color: #060;
