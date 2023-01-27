@@ -1,11 +1,11 @@
 import { storeTask, render } from './functions.js';
 
 export const checkOutTask = (target, tasks) => {
-  if (target.classList.contains('list__task') || target.classList.contains('checkbox')) {
+  if (target.classList.contains('list__task-edit-wrap') || target.classList.contains('checkbox')) {
     let targetInput;
 
-    if (target.classList.contains('list__task')) {
-      targetInput = target.firstChild.nextElementSibling.firstChild;
+    if (target.classList.contains('list__task-edit-wrap')) {
+      targetInput = target.firstChild;
     } else {
       targetInput = target.nextElementSibling.firstChild;
     }

@@ -16,9 +16,11 @@
 - [💻 Getting Started](#getting-started)
   - [Setup](#setup)
   - [Prerequisites](#prerequisites)
+  - [Install](#install)
   - [Usage](#usage)
+  - [Run tests](#run-tests)
   - [Deployment](#triangular_flag_on_post-deployment)
-- [👥 Author](#author)
+- [👥 Authors](#authors)
 - [🤝 Contributing](#contributing)
 - [⭐️ Show your support](#support)
 - [🙏 Acknowledgements](#acknowledgements)
@@ -72,7 +74,8 @@ In order to run this project you need:
 - A browser (e.g. Firefox)
 - An IDE (e.g. [Vususal Studio Code](https://code.visualstudio.com/download))
 - [npm](https://nodejs.org/en/)
-- Terminal
+- [Webpack](https://webpack.js.org/)
+- [Jest](https://jestjs.io/)
 
 ### Setup
 
@@ -96,11 +99,29 @@ To clone this repository to your desired folder, follow the steps below:
   - Select the "Open with GitHub Desktop" option
   - After the GitHub Desktop add opens, click the "clone repo" button
 
+### Install
+
+Install this project's dependencies with the following command:
+
+```sh
+  npm install
+```
+
 ### Usage
 
 To run the project, execute the following command:
 
-**Click the "Go Live" button on your IDE(VS Code in this case)**
+```sh
+  npm start
+```
+
+### Run tests
+
+To run tests, run the following command:
+
+```sh
+  npm test
+```
 
 ### Deployment
 
@@ -113,19 +134,19 @@ You can deploy this project by:
 
 <p align="right">(<a href="#readme-top">back to top</a>)</p>
 
-## 👥 Author <a name="author"></a>
+## 👥 Authors <a name="authors"></a>
 
-👤 **Miles Mosweu**
+| 👤 Author | GitHub | Twitter | LinkedIn |
+| :-- | :-- | :-- | :-- |
+| Miles Mosweu | [@Timbar09](https://github.com/Timbar09) | [@Milez09](https://twitter.com/Milez09) | [@miles09](https://www.linkedin.com/in/miles09) |
+| Cindy Kandie | [@cindykandie](https://github.com/cindykandie) | [@cindy_kandie](https://twitter.com/cindy_kandie) | [@cindykandie](https://linkedin.com/in/cindykandie) |
+| Oscar Deus | [@Oscah01](https://github.com/Oscah01) | [@alphonce_isaya](https://twitter.com/alphonce_isaya) | [@oscar-deus-757833210](https://linkedin.com/in/oscar-deus-757833210) |
 
-- GitHub: [@Timbar09](https://github.com/Timbar09)
-- Twitter: [@Milez09](https://twitter.com/Milez09)
-- LinkedIn: [@miles09](https://www.linkedin.com/in/miles09)
+<p align="right">(<a href="#readme-top">back to top</a>)</p>
 
 ## 🔭 Future Features <a name="future-features"></a>
 
 - [ ] **Implement a refresh function that removes very old tasks and only recent ones**
-
-
 
 <p align="right">(<a href="#readme-top">back to top</a>)</p>
 

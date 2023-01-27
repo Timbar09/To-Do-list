@@ -2,16 +2,11 @@ import './style.css';
 import Task from './modules/taskClass.js';
 import { checkOutTask, clearAllCompleted } from './modules/taskStatus.js';
 import {
-  addTask,
-  render,
-  removeTask,
-  taskContainer,
-  editTask,
-  getTasks,
+  addTask, render, storeTask, removeTask, editTask, getTasks, taskContainer,
 } from './modules/functions.js';
 
-// Add a task
 const form = document.querySelector('.list__add');
+const clearAllBtn = document.querySelector('.list__clear-btn');
 
 form.addEventListener('submit', (e) => {
   e.preventDefault();
@@ -22,13 +17,24 @@ form.addEventListener('submit', (e) => {
 
   description.value = '';
   addTask(tasksArr, newTask);
+
+  storeTask(tasksArr);
+  render(tasksArr);
 });
 
 // Remove a task
 taskContainer.addEventListener('click', (e) => {
   const tasksArr = getTasks();
+  if (e.target.parentElement.classList.contains('delete')) {
+    const targetInput = e.target.parentElement.previousElementSibling.firstChild;
 
-  removeTask(tasksArr, e.target);
+    const taskIndex = tasksArr.findIndex((task) => task.description === targetInput.value);
+    removeTask(tasksArr, taskIndex);
+
+    storeTask(tasksArr);
+    render(tasksArr);
+  }
+
   checkOutTask(e.target, tasksArr);
 });
 
@@ -36,16 +42,14 @@ taskContainer.addEventListener('click', (e) => {
 taskContainer.addEventListener('change', (e) => {
   const tasksArr = getTasks();
 
-  editTask(tasksArr, e.target);
+  editTask(tasksArr, e.target, taskContainer);
 });
 
 // Clear all completed tasks
-const clearAllBtn = document.querySelector('.list__clear-btn');
-
 clearAllBtn.addEventListener('click', () => {
   const tasksArr = getTasks();
 
-  clearAllCompleted(tasksArr);
+  clearAllCompleted(tasksArr, taskContainer);
 });
 
 render(getTasks());

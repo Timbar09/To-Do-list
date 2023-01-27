@@ -57,6 +57,10 @@ ul {
   padding-right: 1rem;
 }
 
+.padding-l {
+  padding-left: 1rem;
+}
+
 .padding-y {
   padding-top: 1rem;
   padding-bottom: 1rem;
@@ -199,7 +203,7 @@ ul {
   --width: auto;
 
   position: relative;
-  width: var(--width);
+  width: 80%;
 }
 
 .checked .list__task-edit-wrap {
@@ -219,7 +223,7 @@ ul {
 }
 
 .checked .list__task-edit-wrap::before {
-  width: 100%;
+  width: var(--width);
 }
 
 .list__task:has(.list__task-edit:focus) .list__task-edit-wrap::before {
@@ -231,7 +235,7 @@ ul {
   padding: 0;
   border: 0;
   outline: 0;
-  width: 100%;
+  width: 50%;
   font-size: inherit;
   line-height: inherit;
   background-color: transparent;
@@ -245,9 +249,14 @@ ul {
   background-color: var(--color-primary-light);
 }
 
-.delete {
-  padding: 0;
+.delete,
+.list__task-move {
   margin-left: auto;
+  font-size: 1.25rem;
+  height: 3.35rem;
+}
+
+.delete {
   display: none;
 }
 
@@ -256,8 +265,7 @@ ul {
 }
 
 .list__task-move {
-  margin-left: auto;
-  font-size: 1.25rem;
+  display: inline-block;
   cursor: move;
 }
 
