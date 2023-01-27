@@ -1,9 +1,7 @@
 import './style.css';
 import Task from './modules/taskClass.js';
 import { checkOutTask, clearAllCompleted } from './modules/taskStatus.js';
-import {
-  addTask, render, storeTask, removeTask, editTask, getTasks, taskContainer,
-} from './modules/functions.js';
+import { addTask, render, storeTask, removeTask, editTask, getTasks, taskContainer } from './modules/functions.js';
 
 const form = document.querySelector('.list__add');
 const clearAllBtn = document.querySelector('.list__clear-btn');
@@ -37,18 +35,17 @@ taskContainer.addEventListener('click', (e) => {
   if (e.target.classList.contains('list__task-edit-wrap') || e.target.classList.contains('checkbox')) {
     let targetInput;
 
-   if (e.target.classList.contains('list__task-edit-wrap')) {
-    targetInput = e.target.firstChild;
-  } else {
-    targetInput = e.target.nextElementSibling.firstChild;
-  }
-  const taskIndex = tasksArr.findIndex((task) => task.description === targetInput.value);
+    if (e.target.classList.contains('list__task-edit-wrap')) {
+      targetInput = e.target.firstChild;
+    } else {
+      targetInput = e.target.nextElementSibling.firstChild;
+    }
+    const taskIndex = tasksArr.findIndex((task) => task.description === targetInput.value);
 
-    checkOutTask(tasksArr, taskIndex); 
+    checkOutTask(tasksArr, taskIndex);
 
     storeTask(tasksArr);
     render(tasksArr);
-
   }
 });
 
@@ -62,14 +59,16 @@ taskContainer.addEventListener('change', (e) => {
     storeTask(tasksArr);
     render(tasksArr);
   }
-  
 });
 
 // Clear all completed tasks
 clearAllBtn.addEventListener('click', () => {
   const tasksArr = getTasks();
 
-  clearAllCompleted(tasksArr, taskContainer);
+  const newTasksArr = clearAllCompleted(tasksArr);
+
+  storeTask(newTasksArr);
+  render(newTasksArr);
 });
 
 render(getTasks());
