@@ -18,7 +18,7 @@
   - [Prerequisites](#prerequisites)
   - [Usage](#usage)
   - [Deployment](#triangular_flag_on_post-deployment)
-- [👥 Author](#author)
+- [👥 Authors](#authors)
 - [🤝 Contributing](#contributing)
 - [⭐️ Show your support](#support)
 - [🙏 Acknowledgements](#acknowledgements)
@@ -113,19 +113,19 @@ You can deploy this project by:
 
 <p align="right">(<a href="#readme-top">back to top</a>)</p>
 
-## 👥 Author <a name="author"></a>
+## 👥 Authors <a name="authors"></a>
 
-👤 **Miles Mosweu**
+| 👤 Author | GitHub | Twitter | LinkedIn |
+| :-- | :-- | :-- | :-- |
+| Miles Mosweu | [@Timbar09](https://github.com/Timbar09) | [@Milez09](https://twitter.com/Milez09) | [@miles09](https://www.linkedin.com/in/miles09) |
+| Cindy Kandie | [@cindykandie](https://github.com/cindykandie) | [@cindy_kandie](https://twitter.com/cindy_kandie) | [@cindykandie](https://linkedin.com/in/cindykandie) |
+| Oscar Deus | [@Oscah01](https://github.com/Oscah01) | [@alphonce_isaya](https://twitter.com/alphonce_isaya) | [@oscar-deus-757833210](https://linkedin.com/in/oscar-deus-757833210) |
 
-- GitHub: [@Timbar09](https://github.com/Timbar09)
-- Twitter: [@Milez09](https://twitter.com/Milez09)
-- LinkedIn: [@miles09](https://www.linkedin.com/in/miles09)
+<p align="right">(<a href="#readme-top">back to top</a>)</p>
 
 ## 🔭 Future Features <a name="future-features"></a>
 
 - [ ] **Implement a refresh function that removes very old tasks and only recent ones**
-
-
 
 <p align="right">(<a href="#readme-top">back to top</a>)</p>
 
