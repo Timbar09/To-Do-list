@@ -34,8 +34,21 @@ taskContainer.addEventListener('click', (e) => {
     storeTask(tasksArr);
     render(tasksArr);
   }
+  if (e.target.classList.contains('list__task-edit-wrap') || e.target.classList.contains('checkbox')) {
+    let targetInput;
 
-  checkOutTask(e.target, tasksArr);
+   if (e.target.classList.contains('list__task-edit-wrap')) {
+    targetInput = e.target.firstChild;
+  } else {
+    targetInput = e.target.nextElementSibling.firstChild;
+  }
+
+    checkOutTask(tasksArr, targetInput); 
+
+    storeTask(tasksArr);
+    render(tasksArr);
+
+  }
 });
 
 // Edit a task

@@ -1,28 +1,17 @@
 import { storeTask, render } from './functions.js';
 
-export const checkOutTask = (target, tasks) => {
-  if (target.classList.contains('list__task-edit-wrap') || target.classList.contains('checkbox')) {
-    let targetInput;
+export const checkOutTask = (tasks, targetInput) => {
+ 
+  const taskIndex = tasks.findIndex((task) => task.description === targetInput.value);
 
-    if (target.classList.contains('list__task-edit-wrap')) {
-      targetInput = target.firstChild;
-    } else {
-      targetInput = target.nextElementSibling.firstChild;
-    }
+  tasks[taskIndex].complete = !tasks[taskIndex].complete;
 
-    const taskIndex = tasks.findIndex((task) => task.description === targetInput.value);
-
-    tasks[taskIndex].complete = !tasks[taskIndex].complete;
-
-    if (tasks[taskIndex].complete) {
-      tasks[taskIndex].checked = 'checked';
-    } else {
-      tasks[taskIndex].checked = '';
-    }
-
-    storeTask(tasks);
-    render(tasks);
+  if (tasks[taskIndex].complete) {
+    tasks[taskIndex].checked = 'checked';
+  } else {
+    tasks[taskIndex].checked = '';
   }
+
 };
 
 export const clearAllCompleted = (tasks) => {

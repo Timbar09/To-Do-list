@@ -35,3 +35,11 @@ describe('Edit task', () => {
         expect(changedDescription).toBe('taskfive');
     });
   });
+
+  describe('update task complete status', () => {
+
+   test('is complete status changed', () => {
+    
+   })
+
+  })
