@@ -1,5 +1,3 @@
-import { storeTask, render } from './functions.js';
-
 export const checkOutTask = (tasks, taskIndex) => {
   tasks[taskIndex].complete = !tasks[taskIndex].complete;
 
@@ -14,7 +12,6 @@ export const checkOutTask = (tasks, taskIndex) => {
 
 export const clearAllCompleted = (tasks) => {
   tasks = tasks.filter((task) => !task.complete);
-  console.log(tasks);
 
   tasks.forEach((task, i) => {
     task.index = i + 1;

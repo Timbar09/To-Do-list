@@ -112,4 +112,32 @@ describe('Filtered tasks', () => {
 
     expect(remainingTasks).toHaveLength(2);
   });
+
+  test('are the cleared tasks removed from local storage', () => {
+    const list = [
+      {
+        description: 'task1',
+        complete: false,
+        index: 1,
+        checked: '',
+      },
+      {
+        description: 'task3',
+        complete: true,
+        index: 2,
+        checked: 'checked',
+      },
+      {
+        description: 'task5',
+        complete: false,
+        index: 3,
+        checked: '',
+      },
+    ];
+
+    const remainingTasks = clearAllCompleted(list);
+    storeTask(remainingTasks);
+
+    expect(getTasks()).toHaveLength(2);
+  });
 });
