@@ -2,7 +2,7 @@
 
 <div>
 
-  <h1><b>Awesome Books</b></h1><br/><br/>
+  <h1><b>To-do List</b></h1><br/><br/>
 
 </div>
 
@@ -28,7 +28,7 @@
 
 # 📖 Todo List <a name="about-project"></a>
 
-**Todo List** is a website that displays a list of tasks and allows you to add and remove tasks from that list.
+**Todo List** is a single page app that displays a list of tasks and allows you to add and remove tasks from that list.
 
 ## 🛠 Built With <a name="built-with"></a>
 
@@ -54,6 +54,10 @@
 - **Store and retrieve data**
 
   - The tasks are stored and retrieved from the local storage of the browser.
+
+- **Testing with Jest**
+
+  - The functions are tested using Jest.
 
 <p align="right">(<a href="#readme-top">back to top</a>)</p>
 
@@ -146,7 +150,7 @@ You can deploy this project by:
 
 ## 🔭 Future Features <a name="future-features"></a>
 
-- [ ] **Implement a refresh function that removes very old tasks and only recent ones**
+- [ ] **Implement a functionality for dragging and dropping tasks.**
 
 <p align="right">(<a href="#readme-top">back to top</a>)</p>
 
@@ -160,13 +164,13 @@ Feel free to check the [issues page](https://github.com/Timbar09/To-Do-list/issu
 
 ## ⭐️ Show your support <a name="support"></a>
 
-If you like this project, give it a ⭐️ and let me know what you like in particular.
+If you like this project, give it a ⭐️ and let us know what you like in particular.
 
 <p align="right">(<a href="#readme-top">back to top</a>)</p>
 
 ## 🙏 Acknowledgments <a name="acknowledgements"></a>
 
-I would like to thank the whole Microverse community for their help and contributions towards this project.
+We would like to thank the whole Microverse community for their help and contributions towards this project.
 
 <p align="right">(<a href="#readme-top">back to top</a>)</p>
 

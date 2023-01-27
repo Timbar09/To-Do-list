@@ -34,22 +34,43 @@ taskContainer.addEventListener('click', (e) => {
     storeTask(tasksArr);
     render(tasksArr);
   }
+  if (e.target.classList.contains('list__task-edit-wrap') || e.target.classList.contains('checkbox')) {
+    let targetInput;
 
-  checkOutTask(e.target, tasksArr);
+    if (e.target.classList.contains('list__task-edit-wrap')) {
+      targetInput = e.target.firstChild;
+    } else {
+      targetInput = e.target.nextElementSibling.firstChild;
+    }
+    const taskIndex = tasksArr.findIndex((task) => task.description === targetInput.value);
+
+    checkOutTask(tasksArr, taskIndex);
+
+    storeTask(tasksArr);
+    render(tasksArr);
+  }
 });
 
 // Edit a task
 taskContainer.addEventListener('change', (e) => {
   const tasksArr = getTasks();
+  if (e.target.classList.contains('list__task-edit')) {
+    const taskIndex = tasksArr.findIndex((task) => task.index.toString() === e.target.closest('.list__task').id);
 
-  editTask(tasksArr, e.target, taskContainer);
+    editTask(tasksArr, e.target, taskIndex);
+    storeTask(tasksArr);
+    render(tasksArr);
+  }
 });
 
 // Clear all completed tasks
 clearAllBtn.addEventListener('click', () => {
   const tasksArr = getTasks();
 
-  clearAllCompleted(tasksArr, taskContainer);
+  const newTasksArr = clearAllCompleted(tasksArr);
+
+  storeTask(newTasksArr);
+  render(newTasksArr);
 });
 
 render(getTasks());
