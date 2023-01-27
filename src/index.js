@@ -42,7 +42,9 @@ taskContainer.addEventListener('click', (e) => {
 taskContainer.addEventListener('change', (e) => {
   const tasksArr = getTasks();
   if (e.target.classList.contains('list__task-edit')) {
-    editTask(tasksArr, e.target);
+    const taskIndex = tasksArr.findIndex((task) => task.index.toString() === e.target.closest('.list__task').id);
+
+    editTask(tasksArr, e.target, taskIndex);
     storeTask(tasksArr);
     render(tasksArr);
   }

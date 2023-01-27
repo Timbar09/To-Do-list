@@ -74,7 +74,7 @@ export const removeTask = (tasks, taskIndex) => {
   return tasks;
 };
 
-export const editTask = (tasks, target) => {
-  const taskIndex = tasks.findIndex((task) => task.index.toString() === target.closest('.list__task').id);
+export const editTask = (tasks, target, taskIndex) => {
   tasks[taskIndex].description = target.value;
+  return tasks;
 };
