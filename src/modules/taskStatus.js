@@ -1,8 +1,7 @@
 import { storeTask, render } from './functions.js';
 
-export const checkOutTask = (tasks, targetInput) => {
+export const checkOutTask = (tasks, taskIndex) => {
  
-  const taskIndex = tasks.findIndex((task) => task.description === targetInput.value);
 
   tasks[taskIndex].complete = !tasks[taskIndex].complete;
 
@@ -11,7 +10,8 @@ export const checkOutTask = (tasks, targetInput) => {
   } else {
     tasks[taskIndex].checked = '';
   }
-
+  
+   return tasks;
 };
 
 export const clearAllCompleted = (tasks) => {

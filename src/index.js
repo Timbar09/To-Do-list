@@ -42,8 +42,9 @@ taskContainer.addEventListener('click', (e) => {
   } else {
     targetInput = e.target.nextElementSibling.firstChild;
   }
+  const taskIndex = tasksArr.findIndex((task) => task.description === targetInput.value);
 
-    checkOutTask(tasksArr, targetInput); 
+    checkOutTask(tasksArr, taskIndex); 
 
     storeTask(tasksArr);
     render(tasksArr);

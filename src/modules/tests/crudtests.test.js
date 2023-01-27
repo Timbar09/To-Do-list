@@ -2,6 +2,7 @@
  * @jest-environment jsdom
  */
 import { editTask, getTasks, storeTask } from '../functions.js';
+import { checkOutTask } from '../taskStatus.js';
 
 describe('Edit task', () => {
     test('is the task edited on DOM', () => {
@@ -39,7 +40,16 @@ describe('Edit task', () => {
   describe('update task complete status', () => {
 
    test('is complete status changed', () => {
-    
+    const list = [
+      {
+        description: 'task5', complete: false, index: 0, checked: '',
+      }
+    ];
+
+    checkOutTask(list, 0)
+    const completeStatus = list[0].complete
+
+    expect(completeStatus).toBe(true);
    })
 
   })
